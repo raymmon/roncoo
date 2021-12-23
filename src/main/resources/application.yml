@@ -7,9 +7,26 @@ spring:
   application:
     name: roncoo
 
+  datasource:
+    url: jdbc:mysql://8.131.233.179:30000/roncoo?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      username: root
+      password: qys!QAZ3edc
+
+mybatis-plus:
+  global-config:
+    db-config:
+      # 声明全局表前缀
+      table-prefix: roncoo_
+  # 扫描mapper文件
+  mapper-locations: classpath*:mapper/*Mapper.xml
+
 roncoo:
   swagger:
     enabled: true
+    base-package: @groupId@
     title: @name@
     description: @description@
     version: @version@

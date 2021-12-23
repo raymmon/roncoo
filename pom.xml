@@ -19,7 +19,8 @@
 
     <properties>
         <java.version>1.8</java.version>
-
+        <orm.mybatis-plus.version>3.4.3.4</orm.mybatis-plus.version>
+        <orm.mybaits.enhancce-actable.version>1.5.0.RELEASE</orm.mybaits.enhancce-actable.version>
         <springfox.version>3.0.0</springfox.version>
         <google.guava.version>31.0.1-jre</google.guava.version>
     </properties>
@@ -40,6 +41,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- orm 框架 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${orm.mybatis-plus.version}</version>
+        </dependency>
+
+        <!-- 数据库驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <!-- swagger 3 -->

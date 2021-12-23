@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="priv.roncoo.dao.CourseCategoryDao">
+
+    <sql id="fields">
+        id, parent_id, category_name, create_by, create_time, last_update_by, last_update_time
+    </sql>
+    <sql id="select">
+        select
+        rcc.id, rcc.parent_id, rcc.category_name, rcc.create_by, rcc.create_time, rcc.last_update_by, rcc.last_update_time
+        from roncoo_course_category as rcc
+    </sql>
+
+    <!-- 查询全部数据 -->
+    <select id="selectAll" resultType="priv.roncoo.model.CourseCategory">
+        <include refid="select"/>
+    </select>
+
+    <!-- 随机获取一个小可爱 -->
+    <select id="findOne" resultType="priv.roncoo.model.CourseCategory">
+        <include refid="select"/>
+        join (
+            select ROUND(
+                /* 0~1随机随机数 * 最大id - 最小id + 最小id */
+                RAND() * (select MAX(id) from roncoo_course_category) - (select min(id) from roncoo_course_category) + (select min(id) from roncoo_course_category)
+            ) as id
+        ) as random
+        where rcc.id > random.id
+        limit 1
+    </select>
+</mapper>

@@ -29,14 +29,11 @@ public class WebMvcConfig {
     @Autowired
     private Swagger3Properties swagger3Properties;
 
-    @Value("${server.servlet.context-path:/}")
-    private String pathMapping;
-
     @Bean
     public Docket docket() {
         return new Docket(DocumentationType.OAS_30)
                 .enable(this.swagger3Properties.isEnabled())
-                .pathMapping(this.pathMapping)
+                .pathMapping("/")
                 .apiInfo(
                         new ApiInfoBuilder()
                                 .title(this.swagger3Properties.getTitle())
@@ -46,9 +43,9 @@ public class WebMvcConfig {
                                 .build()
                 ).select()
                 // 对所有api进行监控
-                .apis(RequestHandlerSelectors.any())
-                // 对跟路径下所有类进行监控
-                .paths(PathSelectors.regex("/*"))
+                .apis(RequestHandlerSelectors.basePackage(this.swagger3Properties.getBasePackage()))
+                // 监控所有路径
+                .paths(PathSelectors.any())
                 .build();
     }
 

@@ -19,6 +19,8 @@ public class Swagger3Properties {
     @Value("${roncoo.swagger:false}")
     private boolean enabled;
 
+    private String basePackage;
+
     private String title;
 
     private String description;
