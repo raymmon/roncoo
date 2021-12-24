@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="priv.roncoo.dao.RolesDao">
+
+    <sql id="fields">
+        id, role, menu_list, create_by, create_time, last_update_by, last_update_time
+    </sql>
+    <sql id="select">
+        select
+        rr.id, rr.role, rr.menu_list, rr.create_by, rr.create_time, rr.last_update_by, rr.last_update_time
+        from roncoo_roles as rr
+    </sql>
+
+</mapper>

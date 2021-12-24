@@ -3,12 +3,12 @@
 <mapper namespace="priv.roncoo.dao.CourseDao">
 
     <sql id="fields">
-        uuid, teacher_uid, course_title, course_back_img, course_introduce, is_pay, course_price, svip_discount, course_label, category_id,
+        uuid, teacher_uid, course_title, course_back_img, course_introduce, is_pay, course_price, course_label, category_id,
         create_by, create_time, last_create_by, last_create_time
     </sql>
     <sql id="select">
         select
-        rc.uuid, rc.teacher_uid, rc.course_title, rc.course_back_img, rc.course_introduce, rc.is_pay, rc.course_price, rc.svip_discount, rc.course_label,
+        rc.uuid, rc.teacher_uid, rc.course_title, rc.course_back_img, rc.course_introduce, rc.is_pay, rc.course_price, rc.course_label,
         rc.category_id, rc.create_by, rc.create_time, rc.last_create_by, rc.last_create_time
         from roncoo_course as rc
     </sql>

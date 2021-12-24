@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="priv.roncoo.dao.CourseOutlineDao">
+
+    <sql id="fields">
+        id, course_uid, parent_id, serial_number, section_name, section_duration, section_link, is_try_see, create_by, create_time, last_update_by, last_update_time
+    </sql>
+    <sql id="select">
+        select
+        rco.id, rco.course_uid, rco.parent_id, rco.serial_number, rco.section_name, rco.section_duration, rco.section_link,
+        rco.is_try_see, rco.create_by, rco.create_time, rco.last_update_by, rco.last_update_time
+        from roncoo_course_outline as rco
+    </sql>
+
+</mapper>

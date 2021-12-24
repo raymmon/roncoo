@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="priv.roncoo.dao.UsersDao">
+
+    <sql id="fields">
+        uuid, user_account, user_password, bind_phone, bind_email, nick_name, gender, area, birthday, head_portrait, is_svip,
+        role_id, menu_list, create_by, create_time, last_update_by, last_update_time
+    </sql>
+    <sql id="select">
+        select
+        ru.uuid, ru.user_account, ru.user_password, ru.bind_phone, ru.bind_email, nick_name, ru.gender, ru.area, ru.birthday,
+        ru.head_portrait, ru.is_svip, ru.role_id, ru.menu_list, ru.create_by, ru.create_time, ru.last_update_by, ru.last_update_time
+        from roncoo_users as ru
+    </sql>
+
+</mapper>

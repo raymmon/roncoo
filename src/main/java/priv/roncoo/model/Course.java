@@ -54,11 +54,6 @@ public class Course extends SuperModel {
     private Integer coursePrice;
 
     /**
-     * svip折扣, 默认无折扣
-     */
-    private BigDecimal svipDiscount;
-
-    /**
      * 课程标签, {@link priv.roncoo.enums.CourseLabelEnum}
      */
     private Integer courseLabel;

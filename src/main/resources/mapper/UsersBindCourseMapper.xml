@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="priv.roncoo.dao.UsersBindCourseDao">
+
+    <sql id="fields">
+        id, user_uid, course_uid, is_collect, create_by, create_time, last_update_by, last_update_time
+    </sql>
+    <sql id="select">
+        select
+        rubc.id, rubc.user_uid, rubc.course_uid, rubc.is_collect, rubc.create_by, rubc.create_time, rubc.last_update_by, rubc.last_update_time
+        from roncoo_users_bind_course as rubc
+    </sql>
+
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="priv.roncoo.dao.UserOrderDao">
+
+    <sql id="fields">
+        uuid, user_uid, order_type, course_uid, order_status, payed_time, is_timeout, create_by, create_time, last_update_by, last_update_time
+    </sql>
+    <sql id="select">
+        select
+        ruo.uuid, ruo.user_uid, ruo.order_type, ruo.course_uid, ruo.order_status, ruo.payed_time, ruo.is_timeout, ruo.create_by, ruo.create_time, ruo.last_update_by, ruo.last_update_time
+        from roncoo_user_order as ruo
+    </sql>
+
+</mapper>

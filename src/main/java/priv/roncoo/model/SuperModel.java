@@ -2,8 +2,8 @@ package priv.roncoo.model;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 
@@ -13,8 +13,8 @@ import java.util.Date;
  * @author lei.xu
  * 2021/12/23 3:46 下午
  */
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode
 public class SuperModel {
 
     @TableField(fill = FieldFill.INSERT)

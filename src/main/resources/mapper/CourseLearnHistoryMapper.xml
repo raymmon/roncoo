@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="priv.roncoo.dao.CourseLearnHistoryDao">
+
+    <sql id="fields">
+        id, user_uid, course_uid, section_id, end_time_point, is_completed, create_by, create_time, last_update_by, last_update_time
+    </sql>
+    <sql id="select">
+        select
+        rclh.id, rclh.user_uid, rclh.course_uid, rclh.section_id, rclh.end_time_point, rclh.is_completed, rclh.create_by, rclh.create_time, rclh.last_update_by, rclh.last_update_time
+        from roncoo_course_learn_history as rclh
+    </sql>
+
+</mapper>

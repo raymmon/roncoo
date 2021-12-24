@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="priv.roncoo.dao.UserSvipDao">
+
+    <sql id="fields">
+        id, user_uid, svip_level, svip_timeout, svip_identity, create_by, create_time, last_update_by, last_update_time
+    </sql>
+    <sql id="select">
+        select
+        rsd.id, rsd.user_uid, rsd.svip_level, rsd.svip_timeout, rsd.svip_identity, rsd.create_by, rsd.create_time, rsd.last_update_by, rsd.last_update_time
+        from roncoo_svip_discount as rsd
+    </sql>
+
+</mapper>
